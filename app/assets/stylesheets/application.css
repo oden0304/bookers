@@ -19,7 +19,7 @@
   box-sizing: border-box;
 }
 
-.toppage {
+.top {
   margin: 33px;
 }
 
@@ -29,4 +29,5 @@
 
 p {
   margin: 33px;
+  padding-left: 33px;
 }
