@@ -19,6 +19,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: verdana,arial,helvetica,sans-serif
+}
+
 .top {
   margin: 33px;
 }
@@ -34,6 +38,37 @@ p {
 
 .index {
   margin: 33px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+td {
+  padding-bottom: 7px;
+}
+
+td > span {
+  padding: 0 10px;
+}
+
+.index > h1 {
+  margin-bottom: 20px;
+}
+
+.flash-message {
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.validate {
+  background-color: red;
+  color: white;
 }
 
 .show {
