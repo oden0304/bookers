@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = '登録しました'
+      flash[:notice] = 'Book was successfully created.'
       redirect_to book_path(@book)
     else
       @books = Book.all
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      flash[:notice] = '更新しました'
+      flash[:notice] = 'Book was successfully updated.'
       redirect_to book_path(@book)
     else
       # @book = Book.find(params[:id])

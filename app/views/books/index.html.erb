@@ -1,5 +1,4 @@
-<div class="index">
-    <h1>Books</h1>
+<h1>Books</h1>
     <nav>
     <table>
         
@@ -34,30 +33,54 @@
         </tbody>
     </table>
     </nav>
-    <h1>New book</h1>
-    <div class="validate">
+    <h2>New book</h2>
         <% if @book.errors.any? %>
-            <%= @book.errors.count %>件のエラーが発生しました
+        <div class="validate">
+            <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
                 <ul>
-                    <%= @book.errors.full_messages.each do |message| %>
+                    <% @book.errors.full_messages.each do |message| %>
                         <li><%= message %></li>
                     <% end %>
                 </ul>
-        <% end %>
+        </div>
+        <%= form_with model:@book do |book| %>
+    <div class="field">
+        <div class="field-with-errors">
+            <label class="label" for="book_title">Title</label>
+        </div>
+        <div class="field-with-errors">
+            <%= book.text_field:title %>
+        </div>
     </div>
-            
-        
-    
-    
-    
-    <%= form_with model:@book do |book| %>
-    
-    <h4>Title</h4>
-    <%= book.text_field:title %>
-    
-    <h4>Body</h4>
-    <%= book.text_area:body %><br>
-    
+    <div class="field">
+        <div class="field-with-errors">
+            <label class="label" for="book_body">Body</label>
+        </div>
+        <div class="field-with-errors">
+            <%= book.text_area:body %>
+        </div>
+    </div>
     <%= book.submit "Create Book" %>
     <% end %>
-</div>
+    <% else %>
+    <%= form_with model:@book do |book| %>
+    <div class="field">
+        <div>
+            <lavel class="label" for="book_title">Title</lavel>
+        </div>
+        <div>
+            <%= book.text_field:title %>
+        </div>
+    </div>
+    <div class="field">
+        <div>
+            <lavel class="label" for="book_body">Body</lavel>
+        </div>
+            <div>
+                <%= book.text_area:body %><br>
+            </div>
+    </div>
+    <%= book.submit "Create Book" %>
+    <% end %>
+    <% end %>
+    
